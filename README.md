@@ -1,24 +1,64 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Appointments Endpoint list of appointments
 
-Things you may want to cover:
+- attributes
+ - time, with (who)
 
-* Ruby version
+- Appointment has Many Users
+- Users has Many Appointments
 
-* System dependencies
+User Types
+- Customer
+- Provider
 
-* Configuration
+Model Keys:
 
-* Database creation
+Appointment model:
+- id
+- title
+- schedule_start_time
+- schedule_end_time
+- customer_id
+- provider_id
+- timestamps
 
-* Database initialization
+Customer model:
+- id
+- first_name
+- last_name
+- timestamps
 
-* How to run the test suite
+Provider model:
+- id
+- first_name
+- last_name
+- timestamps
 
-* Services (job queues, cache servers, search engines, etc.)
+Serialize Response:
 
-* Deployment instructions
+{
+        appointment_id,
+        appointment_title,
+        schedule_end_time,
+        schedule_start_time,
+        customer_id,
+        customer_first_name,
+        customer_last_name,
+        provider_id,
+        provider_first_name,
+        provider_last_name,
+        appointment_timestamps
+    }
 
-* ...
+Pagination:
+
+```
+{
+    data: [<Serialize Response>],
+    count: number,
+    from: min,
+    to: max,
+    'schedule_start_time' => [<Serialize Response>]
+}
+```
