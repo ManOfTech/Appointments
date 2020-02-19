@@ -56,6 +56,7 @@ Provider model:
 
 Serialized Response:
 
+```
 {
     appointment_id,
     appointment_title,
@@ -69,6 +70,7 @@ Serialized Response:
     provider_last_name,
     appointment_timestamps
 }
+```
 
 Pagination:
 
