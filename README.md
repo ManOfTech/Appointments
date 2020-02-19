@@ -2,6 +2,11 @@
 
 Appointments Endpoint list of appointments
 
+Query By:
+
+- View Type: Hourly, Daily, Weekly, Monthly, Yearly
+- Start_Date to End_Date
+
 - attributes
  - time, with (who)
 
@@ -38,18 +43,18 @@ Provider model:
 Serialize Response:
 
 {
-        appointment_id,
-        appointment_title,
-        schedule_end_time,
-        schedule_start_time,
-        customer_id,
-        customer_first_name,
-        customer_last_name,
-        provider_id,
-        provider_first_name,
-        provider_last_name,
-        appointment_timestamps
-    }
+    appointment_id,
+    appointment_title,
+    schedule_end_time,
+    schedule_start_time,
+    customer_id,
+    customer_first_name,
+    customer_last_name,
+    provider_id,
+    provider_first_name,
+    provider_last_name,
+    appointment_timestamps
+}
 
 Pagination:
 
@@ -59,6 +64,13 @@ Pagination:
     count: number,
     from: min,
     to: max,
-    'schedule_start_time' => [<Serialize Response>]
+}
+```
+
+Response:
+
+```
+{
+    'schedule_date' => Pagination,
 }
 ```
