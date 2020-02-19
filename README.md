@@ -1,5 +1,23 @@
 # README
 
+## Requirements
+
+- PostgreSQL v11
+- Rails v6
+- Ruby v2.5.3
+
+## Setup
+
+```
+git clone https://github.com/ManOfTech/Appointments.git
+cd Appointments
+bundle install
+rails db:setup
+rails server
+```
+
+## Design
+
 Appointments Endpoint list of appointments
 
 Query By:
@@ -73,4 +91,16 @@ Response:
 {
     'schedule_date_by_interval' => Pagination,
 }
+```
+
+## Challenge Endpoint
+
+```
+GET: http://localhost:3000/api/v1/appointments
+```
+
+## Automated Swagger-Like API Documentation
+
+```
+Listen on url: http://localhost:3000/documentation
 ```
