@@ -7,13 +7,9 @@ Query By:
 - View Type: Hourly, Daily, Weekly, Monthly, Yearly
 - Start_Date to End_Date
 
-- attributes
- - time, with (who)
+Schema:
 
-- Appointment has Many Users
-- Users has Many Appointments
-
-User Types
+User Types:
 - Customer
 - Provider
 
@@ -40,7 +36,7 @@ Provider model:
 - last_name
 - timestamps
 
-Serialize Response:
+Serialized Response:
 
 {
     appointment_id,
@@ -60,10 +56,14 @@ Pagination:
 
 ```
 {
-    data: [<Serialize Response>],
+    data: [<Serialized Response>],
     count: number,
     from: min,
     to: max,
+    per_page: number,
+    current_page: number,
+    last_page: number,
+    (*page_url_options)
 }
 ```
 
@@ -71,6 +71,6 @@ Response:
 
 ```
 {
-    'schedule_date' => Pagination,
+    'schedule_date_by_interval' => Pagination,
 }
 ```
